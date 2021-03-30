@@ -3,9 +3,8 @@ import os
 import io_handler
 
 class TestIoHandler(unittest.TestCase):
-    """Test in/output operations"""
+    
     def test_read_txt_file(self):
-        """ Test read file returns not null"""
         path = os.path.dirname(__file__) + '/../data/TXT_No_header.txt'
         res = io_handler.read_txt_file(path)
         self.assertIsNotNone(res)
