@@ -1,0 +1,12 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+data/TXT_No_header.txt
+data/TXT_No_header.txt.zip
+src/ar_corrector.egg-info/PKG-INFO
+src/ar_corrector.egg-info/SOURCES.txt
+src/ar_corrector.egg-info/dependency_links.txt
+src/ar_corrector.egg-info/requires.txt
+src/ar_corrector.egg-info/top_level.txt
