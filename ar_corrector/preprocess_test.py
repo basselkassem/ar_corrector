@@ -1,6 +1,5 @@
 import unittest
-from preprocess import Preprocessor
-import config
+from ar_corrector.preprocess import Preprocessor
 
 class TestPreprocessor(unittest.TestCase):  
 

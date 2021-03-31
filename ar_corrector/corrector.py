@@ -1,7 +1,7 @@
 #%%
-import io_handler
-from config import config
-from string_manipulator import StringManipulator
+from  ar_corrector import io_handler
+from ar_corrector.config import config
+from ar_corrector.string_manipulator import StringManipulator
 
 class Corrector:
     

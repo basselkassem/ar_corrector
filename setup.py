@@ -5,6 +5,7 @@ here = pathlib.Path(__file__).parent.resolve()
 long_description = (here / 'README.md').read_text(encoding='utf-8')
 setup(
     name='ar_corrector',  # Required
+     packages=['ar_corrector'],
     version='v1.0.1-alpha',  # Required
     description='Arabic Spelling Correction',  # Optional
     long_description=long_description,  # Optional
@@ -24,7 +25,6 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     keywords='NLP, Spellingcheck',  # Optional
-    packages=['ar_corrector'],
     python_requires='>=3.6, <4',
     install_requires=['requests'],  # Optional
     package_data={  # Optional
