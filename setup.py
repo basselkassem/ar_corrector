@@ -6,7 +6,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 setup(
     name='ar_corrector',  # Required
      packages=['ar_corrector'],
-    version='v1.0.4-alpha',  # Required
+    version='v1.0.6-alpha',  # Required
     description='Arabic Spelling Correction',  # Optional
     long_description=long_description,  # Optional
     long_description_content_type='text/markdown',  # Optional (see note above)
@@ -27,7 +27,7 @@ setup(
     python_requires='>=3.6, <4',
     install_requires=['requests'],  # Optional
     package_data={  # Optional
-        'vocabs': ['ar_corrector/resources/vocabs.pickle'],
+        '': ['resources/*.pickle'],
     },
     project_urls={  # Optional
         'Bug Reports': 'https://github.com/basselkassem/ar_corrector/issues',
