@@ -30,7 +30,4 @@ class Preprocessor:
         res = self.clean(txt)
         chars = set(res)
         return chars
-
-    # %%
-
 # %%
