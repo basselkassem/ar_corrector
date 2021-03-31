@@ -7,7 +7,7 @@ def read_txt_file(path):
 
 def save_dict_file(path, dict_obj):
     with open(path, 'wb') as myfile:
-        pickle.dump(dict_obj, myfile, protocol=pickle.HIGHEST_PROTOCOL)
+        pickle.dump(dict_obj, myfile)
 
 def load_dict_file(path):
     with open(path, 'rb') as myfile:

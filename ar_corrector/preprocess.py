@@ -2,7 +2,6 @@
 import re
 from collections import Counter
 from ar_corrector.io_handler import *
-import os
 from ar_corrector.config import *
 
 class Preprocessor:
@@ -30,4 +29,10 @@ class Preprocessor:
         res = self.clean(txt)
         chars = set(res)
         return chars
+    
+if __name__ == '__main__':
+    text = read_txt_file('../data/TXT_No_header.txt')
+    preprocessor = Preprocessor()
+    preprocessor(text)
+
 # %%
