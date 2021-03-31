@@ -38,7 +38,7 @@ setup(
     # For a discussion on single-sourcing the version across setup.py and the
     # project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.0',  # Required
+    version='v1.0.0-alpha',  # Required
 
     # This is a one-line description or tagline of what your project does. This
     # corresponds to the "Summary" metadata field:
@@ -71,7 +71,8 @@ setup(
     #
     # This field corresponds to the "Home-Page" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#home-page-optional
-    #url='https://github.com/pypa/sampleproject',  # Optional
+    url='https://github.com/basselkassem/ar_corrector',  # Optional
+    download_url = 'https://github.com/basselkassem/ar_corrector/archive/refs/tags/v1.0.0-alpha.tar.gz', 
 
     # This should be your name or the name of the organization which owns the
     # project.
@@ -195,9 +196,9 @@ setup(
     # maintainers, and where to support the project financially. The key is
     # what's used to render the link text on PyPI.
     project_urls={  # Optional
-        'Bug Reports': 'https://github.com/pypa/sampleproject/issues',
+        'Bug Reports': 'https://github.com/basselkassem/ar_corrector/issues',
         'Funding': 'https://donate.pypi.org',
         'Say Thanks!': 'http://saythanks.io/to/B_K',
-        'Source': 'https://github.com/pypa/sampleproject/',
+        'Source': 'https://github.com/basselkassem/ar_corrector',
     },
 )
