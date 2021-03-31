@@ -28,7 +28,4 @@ class Corrector:
 
     def __call__(self, txt, num = 1):
         return self.is_known(txt) or self.filter_edits1(txt, num) or self.filter_edits2(txt, num) or txt
-
-corr = Corrector()
-corr('ذهبلل', 10)
 # %%
