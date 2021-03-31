@@ -1,5 +1,5 @@
 class StringManipulator:
-    def __init__(self, txt):
+    def __init__(self, txt = ''):
         self.splits = [(txt[:i],txt[i:]) for i in range(len(txt) + 1)]
         self.alphbet = sorted('ابتةثجحخدذرزسشصضطظعغفقكلمنهويءآأؤإئ')
 
@@ -18,3 +18,22 @@ class StringManipulator:
     def get_inserts(self):
         inserts = [l + char + r for l, r in self.splits for char in self.alphbet]
         return inserts
+    
+    def get_edits1(self, allow_switches = True):
+        deletes = self.get_deletes()
+        replaces = self.get_replaces()
+        inserts = self.get_inserts()
+        edits = deletes + replaces + inserts
+        if allow_switches:
+            edits += self.get_switches()
+        return list(set(edits))
+    
+    def get_edits2(self, allow_switchs = True):
+        edits1 = self.get_edits1(allow_switches=allow_switchs)
+        edits2 = set()
+        for edit1 in edits1:
+            manipulator = StringManipulator(edit1)
+            for edit2 in manipulator.get_edits1():
+                edits2.add(edit2)
+        return list(edits2)
+        

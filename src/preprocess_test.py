@@ -1,5 +1,6 @@
 import unittest
 from preprocess import Preprocessor
+import config
 
 class TestPreprocessor(unittest.TestCase):  
 

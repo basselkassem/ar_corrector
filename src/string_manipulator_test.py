@@ -30,6 +30,20 @@ class TestStringManipulator(unittest.TestCase):
         str_manipulator = StringManipulator(txt)
         res = str_manipulator.get_inserts()
         self.assertEqual(len(res), expected)
+    
+    def test_get_edits1(self):
+        txt = 'at'
+        expected = 178
+        str_manipulator = StringManipulator(txt)
+        res = str_manipulator.get_edits1()
+        self.assertEqual(len(res), expected)
+    
+    def test_get_edits2(self):
+        txt = 'a'
+        expected = 5007
+        str_manipulator = StringManipulator(txt)
+        res = str_manipulator.get_edits2()
+        self.assertEqual(len(res), expected)
 
 if __name__ == '__main__':
     unittest.main()

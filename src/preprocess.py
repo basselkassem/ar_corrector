@@ -3,6 +3,8 @@ import re
 from collections import Counter
 import io_handler
 import os
+from config import config
+
 class Preprocessor:
     def __init__(self):
         pass
@@ -21,7 +23,7 @@ class Preprocessor:
         ctxt = self.clean(txt)
         txt_arr = self.tokenize(ctxt)
         word_counts = Counter(txt_arr)
-        return word_counts
+        io_handler.save_dict_file(config['vocabs_dict'], dict(word_counts))
 
     def get_letters(self, txt):
         res = self.clean(txt)
@@ -30,9 +32,8 @@ class Preprocessor:
 
 text = io_handler.read_txt_file( os.path.dirname(__file__) + '/../data/TXT_No_header.txt')
 preprocessor = Preprocessor()
-#vocab_dict = preprocessor(text)
-#print(len(vocab_dict))
-#print(preprocessor.get_letters(text), len(preprocessor.get_letters(text)))
+preprocessor(text)
+
     # %%
 
 # %%
