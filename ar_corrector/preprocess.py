@@ -1,9 +1,9 @@
 #%%
 import re
 from collections import Counter
-import io_handler
+from ar_corrector.io_handler import *
 import os
-from config import config
+from ar_corrector.config import *
 
 class Preprocessor:
     def __init__(self):
@@ -23,16 +23,13 @@ class Preprocessor:
         ctxt = self.clean(txt)
         txt_arr = self.tokenize(ctxt)
         word_counts = Counter(txt_arr)
-        io_handler.save_dict_file(config['vocabs_dict'], dict(word_counts))
+        
+        save_dict_file(config['vocabs_dict'], dict(word_counts))
 
     def get_letters(self, txt):
         res = self.clean(txt)
         chars = set(res)
         return chars
-
-text = io_handler.read_txt_file( os.path.dirname(__file__) + '/../data/TXT_No_header.txt')
-preprocessor = Preprocessor()
-preprocessor(text)
 
     # %%
 

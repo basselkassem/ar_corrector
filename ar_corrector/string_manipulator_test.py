@@ -1,5 +1,5 @@
 import unittest
-from string_manipulator import StringManipulator
+from  ar_corrector.string_manipulator import StringManipulator
 
 class TestStringManipulator(unittest.TestCase):
 

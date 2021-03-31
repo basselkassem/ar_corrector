@@ -1,3 +1,3 @@
 config = {
-    'vocabs_dict': 'resources/vocabs.pickle'
+    'vocabs_dict': 'ar_corrector/resources/vocabs.pickle'
 }
