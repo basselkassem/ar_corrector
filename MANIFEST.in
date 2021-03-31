@@ -10,4 +10,4 @@ include LICENSE.txt
 include setup.py
 
 # Include the data files
-recursive-include ar_corrector/resources/*
+recursive-include resources/*
