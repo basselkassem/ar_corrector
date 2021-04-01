@@ -6,8 +6,8 @@ class TestStringManipulator(unittest.TestCase):
     def test_get_deletes(self):
         txt = 'cans'
         expected = ['ans', 'cns', 'cas', 'can']
-        string_manipulator = StringManipulator(txt)
-        res = string_manipulator.get_deletes()
+        stringManipulator = StringManipulator(txt)
+        res = stringManipulator.get_deletes()
         self.assertEqual(res, expected)
     
     def test_get_switches(self):
