@@ -5,8 +5,8 @@ class TestPreprocessor(unittest.TestCase):
 
     def test_clean(self):
         preprocessor = Preprocessor()
-        txt = '- َوهًي ونقية،! و و(- أفضل43 لّ-   أي  وللمج+تم{ع.1- الًتخص'
-        expected = 'وهي ونقية و و أفضل ل أي وللمجتمع التخص'
+        txt = '-وهًي ونقية،! و و(- أفضل43 لّ-   {أي  وللمج+تم{ع.1- الًتخص'
+        expected = 'وهًي ونقية،! و و أفضل لّ أي وللمجتمع. الًتخص'
         res = preprocessor.clean(txt)
         self.assertEqual(res, expected)
     
