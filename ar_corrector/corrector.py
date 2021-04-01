@@ -1,6 +1,6 @@
 #%%
-from  ar_corrector import io_handler
-from ar_corrector.config import config
+from ar_corrector import io_handler
+from ar_corrector.proj_config import config
 from ar_corrector.string_manipulator import StringManipulator
 
 class Corrector:
@@ -31,5 +31,5 @@ class Corrector:
 
 if __name__ == '__main__':
     corr = Corrector()
-    corr('لايعه')
+    print(corr('لايعه'))
 # %%

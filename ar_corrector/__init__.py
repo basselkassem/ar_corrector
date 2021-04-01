@@ -1,1 +1,0 @@
-from ar_corrector.corrector import Corrector
