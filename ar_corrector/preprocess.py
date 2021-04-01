@@ -9,11 +9,9 @@ class Preprocessor:
     def __init__(self):
         pass
     def clean(self, txt):
-        res = re.sub(r'[^\w\s]+', '', txt)
-        res = re.sub(r'[\d_\-]+', ' ', res)
-        res = re.sub(r'\s+', ' ', res)
-        res = re.sub(r'[^ابتةثجحخدذرزسشصضطظعغفقكلمنهويءآأؤإئ\s]+', '', res)
-        res = re.sub(r'\s+', ' ', res)
+        pattern = r'[^' + re.escape(config["allowed_char"]) + r'\s]+'
+        res = re.sub(pattern, r'', txt)
+        res = re.sub(r'\s+', r' ', res)
         return res.strip()
 
     def tokenize(self, txt):
@@ -29,10 +27,14 @@ class Preprocessor:
     def get_letters(self, txt):
         res = self.clean(txt)
         chars = set(res)
-        return chars
+        return 
+        
+
     
 if __name__ == '__main__':
-    text = io_handler.read_txt_file(config['data'])
+    text = ''
+    for data_path in config['data']:
+        text += io_handler.read_txt_file(data_path)
     preprocessor = Preprocessor()
     preprocessor(text)
 

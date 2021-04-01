@@ -32,4 +32,5 @@ class Corrector:
 if __name__ == '__main__':
     corr = Corrector()
     print(corr('لايعه'))
+    print(corr('لوين'))
 # %%

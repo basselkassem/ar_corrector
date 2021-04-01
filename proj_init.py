@@ -16,19 +16,21 @@ def extract_file(path, data_dir):
         my_file.extractall(path=data_dir)
 
 if __name__ == '__main__':
-
-    url = 'http://www.alcsearch.com/ALCfiles/Download/ALC_in_one/TXT_No_header.txt.zip'
+    urls = []
+    urls.append('http://www.alcsearch.com/ALCfiles/Download/ALC_in_one/TXT_No_header.txt.zip')
+    urls.append('https://raw.githubusercontent.com/mohamedadaly/LABR/master/data/reviews.tsv')
     data_dir = 'data'
     if not os.path.exists(data_dir):
         os.mkdir(data_dir)
-    file_name = re.split(r'/', url)[-1]
-    file_path = os.path.join(data_dir, file_name)
-    if not os.path.exists(file_path):
-        download_url(url, file_path)
-
-    nfile_name = re.sub(r'\.zip', '', file_name)
-    nfile_path = os.path.join(data_dir, nfile_name)
-    if not os.path.exists(nfile_path):
-        extract_file(file_path, data_dir)    
-
+    for url in urls:
+        file_name = re.split(r'/', url)[-1]
+        file_path = os.path.join(data_dir, file_name)
+        if not os.path.exists(file_path):
+            download_url(url, file_path)
+        sufix =  re.search(r'\.zip$', file_name)
+        if sufix:
+            nfile_name = re.sub(r'\.zip', '', file_name)
+            nfile_path = os.path.join(data_dir, nfile_name)
+            if not os.path.exists(nfile_path):
+                extract_file(file_path, data_dir)    
 # %%
