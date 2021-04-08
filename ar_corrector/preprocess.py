@@ -4,6 +4,7 @@ import re
 from collections import Counter
 from ar_corrector import io_handler
 from ar_corrector.proj_config import config
+import os
 
 class Preprocessor:
     def __init__(self):
@@ -32,7 +33,10 @@ class Preprocessor:
     
 if __name__ == '__main__':
     text = ''
-    for data_path in config['data']:
+    data_paths = os.listdir(config['data_dir'])
+    data_paths = [config['data_dir'] + dp for dp in data_paths if re.search(r'\.txt$|\.tsv$', dp)]
+
+    for data_path in data_paths:
         text += io_handler.read_txt_file(data_path)
     preprocessor = Preprocessor()
     preprocessor(text)
