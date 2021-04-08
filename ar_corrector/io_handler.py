@@ -3,6 +3,7 @@ import requests
 import zipfile
 import os
 import re
+from ar_corrector.proj_config import config
 
 def read_txt_file(path):
     with open(path, 'r', encoding='utf-8-sig') as myfile:
@@ -33,7 +34,7 @@ if __name__ == '__main__':
     urls = []
     urls.append('http://www.alcsearch.com/ALCfiles/Download/ALC_in_one/TXT_No_header.txt.zip')
     urls.append('https://raw.githubusercontent.com/mohamedadaly/LABR/master/data/reviews.tsv')
-    data_dir = 'data'
+    data_dir = config['data_dir']
     if not os.path.exists(data_dir):
         os.mkdir(data_dir)
     for url in urls:
