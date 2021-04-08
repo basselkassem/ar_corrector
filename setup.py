@@ -6,7 +6,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 setup(
     name='ar_corrector',  # Required
     packages=['ar_corrector'],
-    version='v1.1.0',  # Required
+    version='v1.1.1',  # Required
     description='Arabic Spelling Correction',  # Optional
     long_description=long_description,  # Optional
     long_description_content_type='text/markdown',  # Optional (see note above)
