@@ -6,7 +6,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 setup(
     name='ar_corrector',  # Required
     packages=['ar_corrector'],
-    version='v1.0.9-alpha',  # Required
+    version='v1.1.0',  # Required
     description='Arabic Spelling Correction',  # Optional
     long_description=long_description,  # Optional
     long_description_content_type='text/markdown',  # Optional (see note above)
@@ -14,7 +14,7 @@ setup(
     author='Bassel Kassem',  # Optional
     author_email='bassel.kassem.job@gmail.com',  # Optional
     classifiers=[
-        'Development Status :: 3 - Alpha',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
+        'Development Status :: 5',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
         'Intended Audience :: Developers',      # Define that your audience are developers
         'Topic :: Software Development :: Build Tools',
         'License :: OSI Approved :: MIT License',   # Again, pick a license

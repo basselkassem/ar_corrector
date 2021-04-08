@@ -24,6 +24,17 @@ class TestCorrector(unittest.TestCase):
         res = corr.get_most_likely_edit(edits)
         self.assertEqual(res, expected)
 
+    def test_check_exist(self):
+        txt = 'من'
+        corr = Corrector()
+        res = corr.check(txt)
+        self.assertTrue(res)
+        
+    def test_check_not_exist(self):
+        txt = 'بتسمتبمشسك'
+        corr = Corrector()
+        res = corr.check(txt)
+        self.assertFalse(res)
 
 if __name__ == '__main__':
     unittest.main()

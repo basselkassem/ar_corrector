@@ -23,6 +23,10 @@ class Corrector:
         edits = [(edit, self.vocabs[edit]) for edit in edits if self.is_known(edit)]
         return self.get_most_likely_edit(edits, num)
     
+    def check(self, txt):
+        ctxt = txt.strip()
+        return ctxt in self.vocabs
+    
     def get_most_likely_edit(self, edits, num = 1):
         return sorted(edits, key = lambda item: item[1], reverse=True)[:num]
 
