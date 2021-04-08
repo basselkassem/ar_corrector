@@ -16,6 +16,7 @@ config = {
     'vocabs_dict': dir_path + '/resources/vocabs.pickle',
     'data': data_paths,
     'allowed_char': allowed_char,
+    'data_dir': data_dir,
 
 }
 if __name__== '__main__':
