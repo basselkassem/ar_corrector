@@ -29,7 +29,6 @@ class Preprocessor:
         chars = set(res)
         return 
         
-
     
 if __name__ == '__main__':
     text = ''

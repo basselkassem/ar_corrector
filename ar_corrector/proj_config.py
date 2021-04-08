@@ -8,7 +8,7 @@ punctuations = re.sub(r'\s+', r'', '، . ؛ ! ؟ :')
 allowed_char = alphabet + vocalizations + punctuations
 
 dir_path = os.path.dirname(__file__)
-data_dir = dir_path + '/../data/'
+data_dir = dir_path + '/data/'
 data_paths = os.listdir(data_dir)
 data_paths = [data_dir + dp for dp in data_paths if re.search(r'\.txt$|\.tsv$', dp)]
 
