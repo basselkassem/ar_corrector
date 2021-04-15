@@ -1,0 +1,36 @@
+import unittest
+from ar_corrector.preprocess import Preprocessor
+
+class TestPreprocessor(unittest.TestCase):  
+
+    def test_clean(self):
+        preprocessor = Preprocessor()
+        txt = '-وهًي ونقية،! و و(- أفضل43 لّ-   {أي  وللمج+تم{ع.1- الًتخص'
+        expected = 'وهًي ونقية! و و أفضل لّ أي وللمجتمع. الًتخص'
+        res = preprocessor.clean(txt)
+        self.assertEqual(res, expected)
+    
+    def test_delete_extra_punc(self):
+        txt  = 'تلي.... اي!! تبيس؟؟'
+        expected = 'تلي. اي! تبيس؟'
+        preprocessor = Preprocessor()
+        res = preprocessor.delete_extra_punc(txt)
+        self.assertEqual(res, expected)
+    
+    def test_tokenize(self):
+        preprocessor = Preprocessor()
+        txt = 'بشسم بشم بتشم'
+        res = preprocessor.tokenize(txt)
+        expected = ['بشسم','بشم' ,'بتشم']
+        self.assertEqual(res, expected)
+    
+    def test_sentence_tokenize(self):
+        preprocessor = Preprocessor()
+        txt = 'كتَّابه الوهميين. هذه زيدان ،وهو المتعة. هُنا يتجلى.'
+        expected = ['كتَّابه الوهميين', 'هذه زيدان ،وهو المتعة', 'هُنا يتجلى']
+        res = preprocessor.sentence_tokenize(txt)
+        self.assertEqual(res, expected)
+        
+        
+if __name__ == '__main__':
+    unittest.main()

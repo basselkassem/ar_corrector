@@ -10,7 +10,7 @@ setup(
     description='Arabic Spelling Correction',  # Optional
     long_description=long_description,  # Optional
     long_description_content_type='text/markdown',  # Optional (see note above)
-    download_url = 'https://github.com/basselkassem/ar_corrector/archive/refs/tags/v1.0.0-alpha.tar.gz', 
+    download_url = 'https://github.com/basselkassem/ar_corrector/archive/refs/tags/v1.1.1', 
     author='Bassel Kassem',  # Optional
     author_email='bassel.kassem.job@gmail.com',  # Optional
     classifiers=[

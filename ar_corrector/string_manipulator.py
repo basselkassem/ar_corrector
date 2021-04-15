@@ -1,7 +1,8 @@
+from ar_corrector.proj_config import alphabet
 class StringManipulator:
     def __init__(self, txt = ''):
         self.splits = [(txt[:i],txt[i:]) for i in range(len(txt) + 1)]
-        self.alphbet = sorted('ابتةثجحخدذرزسشصضطظعغفقكلمنهويءآأؤإئ')
+        self.alphbet = sorted(alphabet)
 
     def get_deletes(self):
         deletes = [l + r[1:] for l, r in self.splits if r]
