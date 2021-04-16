@@ -1,20 +1,35 @@
 import unittest
 from ar_corrector.preprocess import Preprocessor
+import re
 
 class TestPreprocessor(unittest.TestCase):  
 
     def test_clean(self):
         preprocessor = Preprocessor()
-        txt = '-وهًي ونقية،! و و(- أفضل43 لّ-   {أي  وللمج+تم{ع.1- الًتخص'
-        expected = 'وهًي ونقية! و و أفضل لّ أي وللمجتمع. الًتخص'
+        txt = '-وهًي ونقية،! !و و(- أفضل43 لّ-   {أي  وللمج+تم{ع.1- الًتخص'
+        expected = 'وهًي ونقية ! و و أفضل لّ أي وللمجتمع . الًتخص'
         res = preprocessor.clean(txt)
         self.assertEqual(res, expected)
     
-    def test_delete_extra_punc(self):
+    def test_delete_extra_punc1(self):
         txt  = 'تلي.... اي!! تبيس؟؟'
         expected = 'تلي. اي! تبيس؟'
         preprocessor = Preprocessor()
         res = preprocessor.delete_extra_punc(txt)
+        self.assertEqual(res, expected)
+    
+    def test_delete_extra_punc2(self):
+        txt  = 'تلي . . . . اي ! ! تبيس ؟ ؟؟ ؟'
+        expected = 'تلي . اي ! تبيس ؟'
+        preprocessor = Preprocessor()
+        res = preprocessor.delete_extra_punc(txt)
+        self.assertEqual(res, expected)
+
+    def test_seperate_punc(self):
+        txt = 'تلي. اي! تبيس؟'
+        expected = 'تلي . اي ! تبيس ؟'
+        preprocessor = Preprocessor()
+        res = preprocessor.separate_puncs(txt)
         self.assertEqual(res, expected)
     
     def test_tokenize(self):

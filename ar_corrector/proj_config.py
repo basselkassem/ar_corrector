@@ -15,7 +15,10 @@ config = {
     'vocabs': dir_path + '/resources/vocabs.pickle',
     'allowed_char': allowed_char,
     'raw_data': data_dir + 'raw/',
-    'processed_data': data_dir + 'processed/'
+    'processed_data': data_dir + 'processed/',
+    '1gram': dir_path + '/resources/1gram.pickle',
+    '2gram': dir_path + '/resources/2gram.pickle',
+    'close_vocabs': dir_path + '/resources/close_vocabs.pickle',
 
 }
 if __name__== '__main__':
