@@ -41,11 +41,17 @@ class TestPreprocessor(unittest.TestCase):
     
     def test_sentence_tokenize(self):
         preprocessor = Preprocessor()
-        txt = 'كتَّابه الوهميين. هذه زيدان ،وهو المتعة. هُنا يتجلى.'
-        expected = ['كتَّابه الوهميين', 'هذه زيدان ،وهو المتعة', 'هُنا يتجلى']
+        txt = 'كتَّابه الوهميين \n هذه زيدان ،هو المتعة \n هُنا يتجلى'
+        expected = ['كتَّابه الوهميين', 'هذه زيدان ،هو المتعة', 'هُنا يتجلى']
         res = preprocessor.sentence_tokenize(txt)
         self.assertEqual(res, expected)
-        
+    
+    def test_split_to_line(self):
+        preprocessor = Preprocessor()
+        txt = 'this . I is so'
+        expected = 'this\nI is so'
+        res = preprocessor.split_to_line(txt)
+        self.assertEqual(res, expected)
         
 if __name__ == '__main__':
     unittest.main()

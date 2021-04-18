@@ -25,8 +25,12 @@ class Preprocessor:
     
     def sentence_tokenize(self, txt):
         res = []
-        for sent in txt.split('.'):
+        for sent in txt.split('\n'):
             if sent.strip():
                 res.append(sent.strip())
         return res
+
+    def split_to_line(self, txt):
+        res = re.sub(r' [.،] ', '\n', txt)
+        return res.strip()
 # %%

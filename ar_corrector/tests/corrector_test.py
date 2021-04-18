@@ -23,6 +23,13 @@ class TestCorrector(unittest.TestCase):
         expected = [('ma', 50)]
         res = corr.get_most_likely_edit(edits)
         self.assertEqual(res, expected)
+    
+    def test_contextual_correct(self):
+        corr = Corrector()
+        sent = 'أستطيع منح الروايعك إلح صاحنكك'
+        expected =  'أستطيع منح الرواية إلى صاحبك'
+        res = corr.contextual_correct(sent)
+        self.assertEqual(res, expected)
 
 if __name__ == '__main__':
     unittest.main()
