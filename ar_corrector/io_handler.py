@@ -15,6 +15,10 @@ def read_tsv_file(path, cols, target):
     data = pd.read_csv(path, sep = '\t', names = cols)
     return '.'.join(data[target].values)
 
+def read_csv_file(path, target):
+    data = pd.read_csv(path)
+    return '.'.join([val for val in data[target].values if type(val) == str])
+
 def save_dict_file(path, dict_obj):
     with open(path, 'wb') as myfile:
         pickle.dump(dict_obj, myfile)
@@ -31,7 +35,7 @@ def load_dict_file(path):
         dict_obj = pickle.load(myfile)
         return dict_obj
 
-def download_url(url, save_path, chunk_size=128):
+def download_url(url, save_path, chunk_size=1024):
     r = requests.get(url, stream=True)
     with open(save_path, 'wb') as fd:
         for chunk in r.iter_content(chunk_size=chunk_size):
@@ -39,5 +43,4 @@ def download_url(url, save_path, chunk_size=128):
 
 def extract_file(path, data_dir):
     with zipfile.ZipFile(path) as my_file:
-        print(my_file.namelist())
         my_file.extractall(path=data_dir)
