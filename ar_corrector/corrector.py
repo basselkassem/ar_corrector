@@ -64,5 +64,6 @@ class Corrector:
 if __name__ == '__main__':
     corr = Corrector()
     sent = 'أكدت قواءص التمذد في تشاد أنها تواضضل طريقها للعاحمة'
+    sent = 'اتتنتهى حدث آبل المنتظو بالإعلاخ عن مموعة من المنتجات'
     print(corr.contextual_correct(sent))
 # %%

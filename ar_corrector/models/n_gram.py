@@ -53,7 +53,6 @@ class NGramModel(BaseModel):
         self.close_vocabs = io_handler.load_dict_file(config['close_vocabs'])
         self.vocab_size = len(self.close_vocabs)
         self.n = len(list(self.ngrams_cnt.keys())[-1])
-        print(self.n)
 
     def _build(self, n = 2, freq_thre = 2, test_size = 10,):
         self.n = n
