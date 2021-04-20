@@ -1,35 +1,37 @@
 # Description
-Simple library to check the spelling of arabic words. This library uses a vocabulary that consists of 354750 words, and uses 1-edit_distance and 2-edit_distance to correct the misspelled words.
+Simple library to check the spelling of arabic sentences. This library uses a vocabulary that consists of +500K words, and uses 1-edit_distance and 2-edit_distance to correct the misspelled words. It also uses 1-ngram language models to correct the words depending on the previous context.
 # Installation
 ```
 pip install ar-corrector
 ```
 # Usage
-## Correct a word
+## Correct word spelling
 ```python
 from ar_corrector.corrector import Corrector
 corr = Corrector()
 
-corr('بختب') # return the correction with the frequency
+corr.spell_correct('بختب') # return the correction with the frequency
 # [('بكتب', 52)]
 
-corr('بختب', 4) # return top 4 correction with frequencies
+corr.spell_correct('بختب', 4) # return top 4 correction with frequencies
 # [('بكتب', 52), ('بخت', 4), ('بختم', 3), ('بعتب', 2)]
 
-corr('لتمشتلميتلكب', 4) # return the same word
+corr.spell_correct('لتمشتلميتلكب', 4) # return the same word
 # لتمشتلميتلكب
 
-corr('من') # return true
+corr.spell_correct('من') # return true
 # True
 ```
-## Check if a word is correct
+## Correct word spelling using the context
 ```python
 from ar_corrector.corrector import Corrector
 corr = Corrector()
 
-corr.check('بختب') # return False
-# False
+sent = 'أكدت قواءص التمذد في تشاد أنها تواضضل طريقها للعاحمة'
+print(corr.contextual_correct(sent)) 
+#أكدت قوات التمرد في تشاد أنها تواصل طريقها للعاصمة
 
-corr.check('من') # return true
-# True
+sent = 'اتتنتهى حدث آبل المنتظو بالإعلاخ عن مموعة من المنتجات'
+print(corr.contextual_correct(sent))
+#انتهى حدث آبل المنتظر الإعلان عن مجموعة من المنتجات
 ```
