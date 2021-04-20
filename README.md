@@ -1,5 +1,5 @@
 # Description
-Simple library to check the spelling of arabic sentences. This library uses a vocabulary that consists of +500K words, and uses 1-edit_distance and 2-edit_distance to correct the misspelled words. It also uses 1-ngram language models to correct the words depending on the previous context.
+Simple library to check the spelling of arabic sentences. This library uses a vocabulary that consists of +500K words, and uses 1-edit_distance and 2-edit_distance to correct the misspelled words. It also uses 1-ngram language model to correct the words depending on the previous context.
 # Installation
 ```
 pip install ar-corrector
