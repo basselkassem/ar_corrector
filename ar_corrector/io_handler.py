@@ -10,7 +10,7 @@ def read_txt_file(path):
     with open(path, 'r', encoding='utf-8-sig') as myfile:
         res = myfile.read()
     return res
-
+    
 def read_tsv_file(path, cols, target):
     data = pd.read_csv(path, sep = '\t', names = cols)
     return '.'.join(data[target].values)

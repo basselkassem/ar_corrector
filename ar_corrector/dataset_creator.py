@@ -6,6 +6,9 @@ from ar_corrector.io_handler import download_url, extract_file, read_txt_file, r
 from ar_corrector.preprocess import Preprocessor
 
 def download_data(urls):
+    data_folder = config['data_dir']
+    if not os.path.exists(data_folder):
+        os.mkdir(data_folder)
     data_dir = config['raw_data']
     if not os.path.exists(data_dir):
         os.mkdir(data_dir)
@@ -61,6 +64,8 @@ def create_dataset(name):
     preprocessor = Preprocessor()
     text = preprocessor.clean(text)
     text = preprocessor.split_to_line(text)
+    if not os.path.exists(config['processed_data']):
+        os.mkdir(config['processed_data'])
     save_txt_file(config['processed_data']+f'{name}.txt', text)
 
 if __name__ == '__main__':
@@ -70,4 +75,4 @@ if __name__ == '__main__':
     urls.append('https://md-datasets-cache-zipfiles-prod.s3.eu-west-1.amazonaws.com/v524p5dhpj-2.zip')
     download_data(urls)
     unzip(file_name = 'arabic_dataset_classifiction.csv.zip')
-    create_dataset(1)
+    create_dataset(2)

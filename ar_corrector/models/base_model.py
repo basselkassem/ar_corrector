@@ -9,8 +9,12 @@ class BaseModel:
         self.file_paths = [os.path.join(data_dir, file_path) for file_path in file_paths if file_path.endswith('.txt')]
         self.preprocessor = Preprocessor()
         
-    def read_data(self):
-        txt = ''
-        for file_path in self.file_paths:
-            txt += read_txt_file(file_path)
-        return txt
+    def read_data(self, file_name = None):
+        if file_name:
+            file_path =  os.path.dirname(__file__) + '/../data/processed/'+file_name
+            return read_txt_file(file_path)
+        else:
+            txt = ''
+            for file_path in self.file_paths:
+                txt += read_txt_file(file_path)
+            return txt
