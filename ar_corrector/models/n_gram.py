@@ -119,13 +119,7 @@ class NGramModel(BaseModel):
 
 if __name__ == '__main__':
     ngram_model = NGramModel(k_smoothing=1, data_path ='2.txt')
-    # txts = ngram_model.read_data(ngram_model.data_path)
-    # ngram_model._create_closed_vocabs(txts, save = True)
-    ngram_model._build(1, 3, 10, )
+    ngram_model._build(1, 3, 1, )
     #ngram_model.load_model()
-    sent = 'ذهب الطفل إلى البيت'#
-    #print(ngram_model.estimate_probability('من', sent))
-    #print(ngram_model.estimate_probability('إلى', sent))
-    #print(ngram_model.estimate_probability('الخ', sent))
+    sent = 'ذهب الطفل إلى البيت'
     print(ngram_model.compute_sent_perplexity(sent))
-    #print(ngram_model._compute_perplexity())

@@ -1,0 +1,7 @@
+.vscode
+data
+resources
+__pycache__
+dist
+ar_corrector.egg-info
+build

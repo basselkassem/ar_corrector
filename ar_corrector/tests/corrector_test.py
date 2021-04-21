@@ -27,7 +27,7 @@ class TestCorrector(unittest.TestCase):
     def test_contextual_correct(self):
         corr = Corrector()
         sent = 'أستطيع منح الروايعك إلح صاحنكك'
-        expected =  'أستطيع منح الرواية إلى صاحبك'
+        expected =  'أستطيع منح الرواية على صاحبك'
         res = corr.contextual_correct(sent)
         self.assertEqual(res, expected)
 

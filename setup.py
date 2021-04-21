@@ -6,11 +6,11 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 setup(
     name='ar_corrector',  # Required
     packages=['ar_corrector'],
-    version='v1.1.2',  # Required
+    version='v1.1.4',  # Required
     description='Arabic Spelling Correction',  # Optional
     long_description=long_description,  # Optional
     long_description_content_type='text/markdown',  # Optional (see note above)
-    download_url = 'https://github.com/basselkassem/ar_corrector/archive/refs/tags/v1.1.2', 
+    download_url = 'https://github.com/basselkassem/ar_corrector/archive/refs/tags/v1.1.4', 
     author='Bassel Kassem',  # Optional
     author_email='bassel.kassem.job@gmail.com',  # Optional
     classifiers=[

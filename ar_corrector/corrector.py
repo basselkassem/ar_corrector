@@ -1,5 +1,4 @@
 #%%
-import re
 from ar_corrector import io_handler
 from ar_corrector.proj_config import config
 from ar_corrector.string_manipulator import StringManipulator
@@ -64,6 +63,7 @@ class Corrector:
 if __name__ == '__main__':
     corr = Corrector()
     sent = 'أكدت قواءص التمذد في تشاد أنها تواضضل طريقها للعاحمة'
+    print(corr.contextual_correct(sent))
     sent = 'اتتنتهى حدث آبل المنتظو بالإعلاخ عن مموعة من المنتجات'
     print(corr.contextual_correct(sent))
 # %%
