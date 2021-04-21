@@ -10,11 +10,14 @@ pip install ar-corrector
 from ar_corrector.corrector import Corrector
 corr = Corrector()
 
-corr.spell_correct('بختب') # return the correction with the frequency
-# [('بكتب', 52)]
+corr.spell_correct('بختب') # return 5 corrections with top frequencies
+# [('بكتب', 61), ('برتب', 22), ('بختم', 21), ('بختي', 9), ('بخت', 7)]
 
-corr.spell_correct('بختب', 4) # return top 4 correction with frequencies
-# [('بكتب', 52), ('بخت', 4), ('بختم', 3), ('بعتب', 2)]
+corr.spell_correct('بختب', 2) # return 2 corrections with top frequencies
+# [('بكتب', 61), ('برتب', 22),]
+
+corr.spell_correct('بختب', 1) # return 1 correction with top frequency
+# [('بكتب', 61)]
 
 corr.spell_correct('لتمشتلميتلكب', 4) # return the same word
 # لتمشتلميتلكب

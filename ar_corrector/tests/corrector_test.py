@@ -24,6 +24,12 @@ class TestCorrector(unittest.TestCase):
         res = corr.get_most_likely_edit(edits)
         self.assertEqual(res, expected)
     
+    def test_spell_correct(self):
+        corr = Corrector()
+        res = corr.spell_correct('بختب', 1)
+        expected = [('بكتب', 61)]
+        self.assertEqual(res, expected)
+    
     def test_contextual_correct(self):
         corr = Corrector()
         sent = 'أستطيع منح الروايعك إلح صاحنكك'
